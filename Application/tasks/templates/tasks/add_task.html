@@ -1,0 +1,23 @@
+<h1>Add Task</h1>
+<form method="post">
+    {% csrf_token %}
+    Title: <input type="text" name="title" required><br>
+    Description: <textarea name="description" required></textarea><br>
+    Priority:
+    phonenumber=<input type="number" name="phonenumber"><br>
+    age=<input type="number" name="age"><br>
+
+    <select name="priority" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select><br>
+    Status:
+    <select name="status" required>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+        Due Date: <input type="datetime-local" name="due_date"><br>
+    </select><br>
+    <button type="submit">Add Task</button>
+</form>

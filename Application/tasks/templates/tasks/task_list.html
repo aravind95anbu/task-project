@@ -1,0 +1,22 @@
+<h1>Task List</h1>
+<a href="{% url 'add_task' %}">Add Task</a>
+<form method="get">
+    <select name="priority">
+        <option value="">All Priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} - {{ task.priority }} - {{ task.status }}- Due: {{ task.due_date|default:"Not Set" }}-due{{task.phonenumber}}-{{task.age}}
+            <a href="{% url 'edit_task' task.id %}">Edit</a>
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<ul>
+   
+</ul>

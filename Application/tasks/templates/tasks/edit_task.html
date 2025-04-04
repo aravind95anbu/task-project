@@ -1,0 +1,24 @@
+<h1>Edit Task</h1>
+<form method="post">
+    {% csrf_token %}
+    Due Date: <input type="datetime-local" name="due_date" value="{{ task.due_date|date:'Y-m-d\TH:i' }}"><br>
+
+    Title: <input type="text" name="title" value="{{ task.title }}" required><br>
+    Description: <textarea name="description" required>{{ task.description }}</textarea><br>
+    Priority:
+    phonenumber<input type="number" name="phonenumber" value="{{task.phonenumber}}"><br>
+    age=<input type='number' name="age"value={{task.age}}><br>
+    <select name="priority" required>
+        <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High</option>
+        <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium</option>
+        <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low</option>
+    </select><br>
+    Status:
+    <select name="status" required>
+        <option value="Pending" {% if task.status == 'Pending' %}selected{% endif %}>Pending</option>
+        <option value="In Progress" {% if task.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+        <option value="Completed" {% if task.status == 'Completed' %}selected{% endif %}>Completed</option>
+        
+    </select><br>
+    <button type="submit">Save Changes</button>
+</form>
