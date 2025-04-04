@@ -1,0 +1,6 @@
+<h1>Tasks</h1>
+ <ul>
+ {% for task in tasks %}
+     <li>{{ task.title }} - {{ task.priority }} - {{ task.status }} | <a href='/edit/{{ task.id }}/'>Edit</a> | <a href='/delete/{{ task.id }}/'>Delete</a></li>
+ {% endfor %}
+ </ul>

@@ -1,0 +1,17 @@
+<h1>Add Task</h1>
+ <form method='post'>
+     {% csrf_token %}
+     Title: <input type='text' name='title'><br>
+     Description: <textarea name='description'></textarea><br>
+     Priority: <select name='priority'>
+         <option>High</option>
+         <option>Medium</option>
+         <option>Low</option>
+     </select><br>
+     Status: <select name='status'>
+         <option>Pending</option>
+         <option>In Progress</option>
+         <option>Completed</option>
+     </select><br>
+     <button type='submit'>Add Task</button>
+ </form>

@@ -1,0 +1,8 @@
+<h1>Add Account</h1>
+<form method="post">
+    {% csrf_token %}
+    Account Holder: <input type="text" name="account_holder" required><br>
+    Account Number: <input type="text" name="account_number" required><br>
+   <!-- Address: <textarea name="address" required></textarea><br>--> 
+    <button type="submit">Create Account</button>
+</form>
